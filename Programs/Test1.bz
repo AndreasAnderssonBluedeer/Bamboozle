@@ -1,0 +1,6 @@
+nbr x;
+nbr z;
+x->10;
+z->1132;
+log x;
+log z;
