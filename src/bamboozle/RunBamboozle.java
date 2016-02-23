@@ -23,7 +23,7 @@ public class RunBamboozle {
         } else {
           //  infnam = JOptionPane.showInputDialog("Vilken fil vill du köra?");
             infnam = (String)JOptionPane.showInputDialog(null, "Vilken fil vill du köra?",
-                    "Välj fil", JOptionPane.QUESTION_MESSAGE,null,null,"programs/Test2.bz");
+                    "Välj fil", JOptionPane.QUESTION_MESSAGE,null,null,"programs/Test3.bz");
         }
         ANTLRInputStream input = new ANTLRInputStream(new FileInputStream(infnam));
         BamboozleLexer lexer = new BamboozleLexer(input);

@@ -11,8 +11,8 @@ public class DoHackass {
        // String infnam = args[0];
       //  String outfnam = args[1];
         String infnam,outfnam;
-        infnam="programs/sum100.has";
-        outfnam="programs/sum100.hack1";
+        infnam="programs/Test3.bz.bzh";
+        outfnam="programs/Test3.hack";
         ANTLRInputStream input = new ANTLRInputStream(new FileInputStream(infnam));
         HackassLexer lexer = new HackassLexer(input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);

@@ -28,22 +28,22 @@ package ByteCode;
             LocalVariable sum = b.createLocalVariable("sum", TypeDesc.INT);
             Label end = b.createLabel();
             Label loop = b.createLabel();
-            b.loadConstant(0);
+            b.loadConstant(0);  //=var1
             b.storeLocal(sum);
             b.loadConstant(1);
-            b.storeLocal(i);
+            b.storeLocal(i);    //var2
             loop.setLocation();
             b.loadLocal(i);
-            b.loadConstant(100);
+            b.loadConstant(100);    //lopp-villkor
             b.ifComparisonBranch(end, ">");
             b.loadLocal(i);
             b.dup();
             b.loadLocal(sum);
-            b.math(Opcode.IADD);
-            b.storeLocal(sum);
+            b.math(Opcode.IADD);    //addera
+            b.storeLocal(sum);      //spara till sum/var1
             b.loadConstant(1);
             b.math(Opcode.IADD);
-            b.storeLocal(i);
+            b.storeLocal(i);        //uppdatera var2/i
             b.branch(loop);
             end.setLocation();
             b.loadStaticField("java.lang.System", "out", printStream);
