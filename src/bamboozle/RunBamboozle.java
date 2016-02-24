@@ -12,9 +12,17 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 /**
- * Created by Andreas on 2016-02-05.
+ * A class to start the compilation of the programming language Bamboozle.
+ * Compilates as Java via the Grammar from Bamboozle.g4 and converts it to Java Bytecode via ByteCodeGenerator.
+ * Created by Andreas & Sara on 2016-02-05.
  */
 public class RunBamboozle {
+    /**
+     * Start-method. Lets the user choose a file/program to run and a filename to save the Java Bytecode that will be
+     * saved in src/ByteCode/*FILENAME*
+     * @param args
+     * @throws IOException
+     */
     public static void main(String[] args) throws IOException {
 
         String infnam;
@@ -33,7 +41,6 @@ public class RunBamboozle {
         BamboozleLexer lexer = new BamboozleLexer(input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         BamboozleParser parser = new BamboozleParser(tokens);
-      //  ParseTree tree = parser.code(); //
         ParseTree tree = parser.instruction();
         ParseTreeWalker walker = new ParseTreeWalker();
         walker.walk(new Interpreter(infnam,bcg), tree);
