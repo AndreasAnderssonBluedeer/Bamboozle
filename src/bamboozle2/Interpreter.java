@@ -1,7 +1,7 @@
-package bamboozle;
+package bamboozle2;
 
-import bamboozle.grammar.BamboozleBaseListener;
-import bamboozle.grammar.BamboozleParser;
+import bamboozle2.grammar.BamboozleBaseListener;
+import bamboozle2.grammar.BamboozleParser;
 import org.antlr.v4.runtime.Token;
 
 import java.util.HashMap;
@@ -32,7 +32,7 @@ public class Interpreter extends BamboozleBaseListener {
      * @param filename Filename
      * @param bcg ByteCode-Generator
      */
-    public Interpreter(String filename,ByteCodeGenerator bcg) {
+    public Interpreter(String filename, ByteCodeGenerator bcg) {
         this.inputFileName = filename;
         this.bcg=bcg;
     }

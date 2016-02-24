@@ -1,4 +1,4 @@
-package bamboozle;
+package bamboozle2;
 
 import java.io.*;
 

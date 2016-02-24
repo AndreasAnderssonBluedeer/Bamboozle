@@ -2,7 +2,7 @@ grammar Bamboozle;
 
 // Remove this header if using the default IntelliJ project layout
 @header {
-package bamboozle.grammar;
+package bamboozle2.grammar;
 }
 
 instruction

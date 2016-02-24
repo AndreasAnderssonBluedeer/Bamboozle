@@ -1,5 +1,5 @@
 // Generated from C:/Users/Andreas/Documents/Bamboozle/src/bamboozle/grammar\Bamboozle.g4 by ANTLR 4.5.1
-package bamboozle.grammar;
+package bamboozle2.grammar;
 
 
 

@@ -1,7 +1,7 @@
-package bamboozle;
+package Bamboozle1;
 
-import bamboozle.grammar.BamboozleLexer;
-import bamboozle.grammar.BamboozleParser;
+import Bamboozle1.grammar.BamboozleLexer;
+import Bamboozle1.grammar.BamboozleParser;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
@@ -13,7 +13,7 @@ import java.io.IOException;
 
 /**
  * A class to start the compilation of the programming language Bamboozle.
- * Compilates as Java via the Grammar from Bamboozle.g4 and converts it to Java Bytecode via ByteCodeGenerator.
+ * Compilates as Java via the Grammar from Bamboozle.g4.
  * Created by Andreas & Sara on 2016-02-05.
  */
 public class RunBamboozle {
@@ -33,17 +33,14 @@ public class RunBamboozle {
             infnam = (String)JOptionPane.showInputDialog(null, "Vilken fil vill du köra?",
                     "Välj fil", JOptionPane.QUESTION_MESSAGE,null,null,"programs/Test3.bz");
         }
-        String classname=(String)JOptionPane.showInputDialog(null, "Välj filnamn",
-                "Välj filnam", JOptionPane.QUESTION_MESSAGE,null,null,"TestingGenerated");
 
-        ByteCodeGenerator bcg=new ByteCodeGenerator(classname);
         ANTLRInputStream input = new ANTLRInputStream(new FileInputStream(infnam));
         BamboozleLexer lexer = new BamboozleLexer(input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         BamboozleParser parser = new BamboozleParser(tokens);
         ParseTree tree = parser.instruction();
         ParseTreeWalker walker = new ParseTreeWalker();
-        walker.walk(new Interpreter(infnam,bcg), tree);
-        bcg.writeEnd();
+        walker.walk(new Interpreter(infnam), tree);
+
     }
 }

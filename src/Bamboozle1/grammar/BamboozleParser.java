@@ -1,16 +1,15 @@
 // Generated from C:/Users/Andreas/Documents/Bamboozle/src/bamboozle/grammar\Bamboozle.g4 by ANTLR 4.5.1
-package bamboozle.grammar;
+package Bamboozle1.grammar;
 
 
-
-import org.antlr.v4.runtime.atn.*;
-import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
-import org.antlr.v4.runtime.misc.*;
-import org.antlr.v4.runtime.tree.*;
-import java.util.List;
-import java.util.Iterator;
-import java.util.ArrayList;
+import org.antlr.v4.runtime.atn.ATN;
+import org.antlr.v4.runtime.atn.ATNDeserializer;
+import org.antlr.v4.runtime.atn.ParserATNSimulator;
+import org.antlr.v4.runtime.atn.PredictionContextCache;
+import org.antlr.v4.runtime.dfa.DFA;
+import org.antlr.v4.runtime.tree.ParseTreeListener;
+import org.antlr.v4.runtime.tree.TerminalNode;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class BamboozleParser extends Parser {
@@ -98,11 +97,11 @@ public class BamboozleParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_instruction; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof BamboozleListener ) ((BamboozleListener)listener).enterInstruction(this);
+			if ( listener instanceof BamboozleListener) ((BamboozleListener)listener).enterInstruction(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof BamboozleListener ) ((BamboozleListener)listener).exitInstruction(this);
+			if ( listener instanceof BamboozleListener) ((BamboozleListener)listener).exitInstruction(this);
 		}
 	}
 
@@ -163,11 +162,11 @@ public class BamboozleParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_toDo; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof BamboozleListener ) ((BamboozleListener)listener).enterToDo(this);
+			if ( listener instanceof BamboozleListener) ((BamboozleListener)listener).enterToDo(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof BamboozleListener ) ((BamboozleListener)listener).exitToDo(this);
+			if ( listener instanceof BamboozleListener) ((BamboozleListener)listener).exitToDo(this);
 		}
 	}
 
@@ -221,11 +220,11 @@ public class BamboozleParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_declaration; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof BamboozleListener ) ((BamboozleListener)listener).enterDeclaration(this);
+			if ( listener instanceof BamboozleListener) ((BamboozleListener)listener).enterDeclaration(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof BamboozleListener ) ((BamboozleListener)listener).exitDeclaration(this);
+			if ( listener instanceof BamboozleListener) ((BamboozleListener)listener).exitDeclaration(this);
 		}
 	}
 
@@ -263,11 +262,11 @@ public class BamboozleParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_assign; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof BamboozleListener ) ((BamboozleListener)listener).enterAssign(this);
+			if ( listener instanceof BamboozleListener) ((BamboozleListener)listener).enterAssign(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof BamboozleListener ) ((BamboozleListener)listener).exitAssign(this);
+			if ( listener instanceof BamboozleListener) ((BamboozleListener)listener).exitAssign(this);
 		}
 	}
 
@@ -306,11 +305,11 @@ public class BamboozleParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_print; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof BamboozleListener ) ((BamboozleListener)listener).enterPrint(this);
+			if ( listener instanceof BamboozleListener) ((BamboozleListener)listener).enterPrint(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof BamboozleListener ) ((BamboozleListener)listener).exitPrint(this);
+			if ( listener instanceof BamboozleListener) ((BamboozleListener)listener).exitPrint(this);
 		}
 	}
 
@@ -350,11 +349,11 @@ public class BamboozleParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_expression; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof BamboozleListener ) ((BamboozleListener)listener).enterExpression(this);
+			if ( listener instanceof BamboozleListener) ((BamboozleListener)listener).enterExpression(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof BamboozleListener ) ((BamboozleListener)listener).exitExpression(this);
+			if ( listener instanceof BamboozleListener) ((BamboozleListener)listener).exitExpression(this);
 		}
 	}
 
@@ -381,7 +380,7 @@ public class BamboozleParser extends Parser {
 			setState(44);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,2,_ctx);
-			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+			while ( _alt!=2 && _alt!= ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
@@ -424,11 +423,11 @@ public class BamboozleParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_info; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof BamboozleListener ) ((BamboozleListener)listener).enterInfo(this);
+			if ( listener instanceof BamboozleListener) ((BamboozleListener)listener).enterInfo(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof BamboozleListener ) ((BamboozleListener)listener).exitInfo(this);
+			if ( listener instanceof BamboozleListener) ((BamboozleListener)listener).exitInfo(this);
 		}
 	}
 
