@@ -8,7 +8,7 @@ package ByteCode;
     import java.io.*;
 
     public class GenSum100 {
-        static String generatedClassName = "Sum100Generated";
+        static String generatedClassName = "Sum100Generated4";
 
         public static void main(String[] args) throws IOException {
             ClassFile cf = createClassFile();
@@ -34,7 +34,7 @@ package ByteCode;
             b.storeLocal(i);    //var2
             loop.setLocation();
             b.loadLocal(i);
-            b.loadConstant(100);    //lopp-villkor
+            b.loadConstant(100);    //loop-villkor
             b.ifComparisonBranch(end, ">");
             b.loadLocal(i);
             b.dup();

@@ -17,9 +17,12 @@ public class Interpreter extends BamboozleBaseListener {
     private final String inputFileName;
     private final HashMap<String, Var> vars = new HashMap<String, Var>();
     private Stack<Integer> exprVal = new Stack<Integer>();
+    private String varName ;
+    private ByteCodeGenerator bcg;
 
-    Interpreter(String filename) {
+    Interpreter(String filename,ByteCodeGenerator bcg) {
         this.inputFileName = filename;
+        this.bcg=bcg;
         hag=new HackAsmGenerator(inputFileName);
     }
 
@@ -44,7 +47,7 @@ public class Interpreter extends BamboozleBaseListener {
     @Override
     public void enterDeclaration(BamboozleParser.DeclarationContext context) {
         String name = context.ID().getText();
-
+        bcg.createVariable(name);
         System.out.println("enterDecl: var "+name);
         hag.writeDecl(name);
 
@@ -59,7 +62,8 @@ public class Interpreter extends BamboozleBaseListener {
 
         Var x=getVar(context.ID().getSymbol());
         x.val = exprVal.pop();
-
+//        bcg.loadConst(x.val);
+        bcg.storeValue(x.name);
         hag.writeAssign(x.name,x.val);
         System.out.println("Exit Assign ID/VAL:"+x.name+"/"+x.val);
 
@@ -68,8 +72,9 @@ public class Interpreter extends BamboozleBaseListener {
     @Override
     public void exitPrint(BamboozleParser.PrintContext context) {
         Integer x= exprVal.pop();
-        System.out.println("ExitPrint:"+x);
+        bcg.print(varName);
         System.out.println(x);
+        //OBS Hämta variabelnamnet för att skriva ut, Getvar?
     }
     @Override
     public void exitExpression(BamboozleParser.ExpressionContext context) {
@@ -79,6 +84,7 @@ public class Interpreter extends BamboozleBaseListener {
             two=exprVal.pop();
             System.out.println("exitExpr incl push:"+one+"+"+two);
             exprVal.push(one+two);
+            bcg.addValues();
         }
     }
     @Override
@@ -87,10 +93,13 @@ public class Interpreter extends BamboozleBaseListener {
             Var x=getVar(context.ID().getSymbol());
             System.out.println("EnterInfo ID/Val:"+x.name+"/"+x.val);
             exprVal.push(x.val);
+            varName=(x.name);
+            bcg.loadLocal(x.name);
         } else {
             Integer z=Integer.parseInt(context.INT().getText());
             System.out.println("EnterInfo value:"+z);
             exprVal.push(z);
+            bcg.loadConst(z);
         }
     }
 }

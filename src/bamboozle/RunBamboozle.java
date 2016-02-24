@@ -10,13 +10,13 @@ import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import javax.swing.*;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Scanner;
 
 /**
  * Created by Andreas on 2016-02-05.
  */
 public class RunBamboozle {
     public static void main(String[] args) throws IOException {
+
         String infnam;
         if (args.length > 0) {
             infnam = args[0];
@@ -25,6 +25,10 @@ public class RunBamboozle {
             infnam = (String)JOptionPane.showInputDialog(null, "Vilken fil vill du köra?",
                     "Välj fil", JOptionPane.QUESTION_MESSAGE,null,null,"programs/Test3.bz");
         }
+        String classname=(String)JOptionPane.showInputDialog(null, "Välj filnamn",
+                "Välj filnam", JOptionPane.QUESTION_MESSAGE,null,null,"TestingGenerated");
+
+        ByteCodeGenerator bcg=new ByteCodeGenerator(classname);
         ANTLRInputStream input = new ANTLRInputStream(new FileInputStream(infnam));
         BamboozleLexer lexer = new BamboozleLexer(input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
@@ -32,6 +36,7 @@ public class RunBamboozle {
       //  ParseTree tree = parser.code(); //
         ParseTree tree = parser.instruction();
         ParseTreeWalker walker = new ParseTreeWalker();
-        walker.walk(new Interpreter(infnam), tree);
+        walker.walk(new Interpreter(infnam,bcg), tree);
+        bcg.writeEnd();
     }
 }
