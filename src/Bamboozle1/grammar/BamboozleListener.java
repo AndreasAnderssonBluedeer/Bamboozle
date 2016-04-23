@@ -1,8 +1,5 @@
-// Generated from C:/Users/Andreas/Documents/Bamboozle/src/bamboozle/grammar\Bamboozle.g4 by ANTLR 4.5.1
+// Generated from /Users/Andreas/Documents/Studier/Systemprogramvara/Bamboozle/src/Bamboozle1/grammar/Bamboozle.g4 by ANTLR 4.5.1
 package Bamboozle1.grammar;
-
-
-
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -60,6 +57,16 @@ public interface BamboozleListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitPrint(BamboozleParser.PrintContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link BamboozleParser#repeat}.
+	 * @param ctx the parse tree
+	 */
+	void enterRepeat(BamboozleParser.RepeatContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link BamboozleParser#repeat}.
+	 * @param ctx the parse tree
+	 */
+	void exitRepeat(BamboozleParser.RepeatContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link BamboozleParser#expression}.
 	 * @param ctx the parse tree

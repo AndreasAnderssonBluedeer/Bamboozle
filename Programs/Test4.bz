@@ -2,8 +2,9 @@ nbr x;
 nbr z;
 x->10;
 z->1132;
-repeat x<13 {
+repeat x < 13{
 x->x+1;
+z->z+2;
 };
 
 log x;

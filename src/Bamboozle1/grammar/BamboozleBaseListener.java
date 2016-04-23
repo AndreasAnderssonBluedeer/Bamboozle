@@ -1,8 +1,5 @@
-// Generated from C:/Users/Andreas/Documents/Bamboozle/src/bamboozle/grammar\Bamboozle.g4 by ANTLR 4.5.1
+// Generated from /Users/Andreas/Documents/Studier/Systemprogramvara/Bamboozle/src/Bamboozle1/grammar/Bamboozle.g4 by ANTLR 4.5.1
 package Bamboozle1.grammar;
-
-
-
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -74,6 +71,18 @@ public class BamboozleBaseListener implements BamboozleListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitPrint(BamboozleParser.PrintContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterRepeat(BamboozleParser.RepeatContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitRepeat(BamboozleParser.RepeatContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

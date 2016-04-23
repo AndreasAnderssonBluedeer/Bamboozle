@@ -45,5 +45,6 @@ public class RunBamboozle {
         ParseTreeWalker walker = new ParseTreeWalker();
         walker.walk(new Interpreter(infnam,bcg), tree);
         bcg.writeEnd();
+
     }
 }

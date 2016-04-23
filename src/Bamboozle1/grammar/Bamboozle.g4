@@ -1,12 +1,9 @@
 grammar Bamboozle;
 
-// Remove this header if using the default IntelliJ project layout
-@header {
-package bamboozle2.grammar;
-}
 
 instruction
 : toDo ';' instruction
+| toDo ';'
 | EOF                           // implicitly defined terminal
 ;
 
@@ -14,6 +11,7 @@ toDo
 : declaration
 | assign
 | print
+| repeat
 ;
 
 declaration
@@ -27,6 +25,13 @@ assign
 print
 : 'log' expression
 ;
+
+
+repeat
+: 'repeat' info '<' info '{' instruction '}'
+;
+
+
 
 expression
 : info
